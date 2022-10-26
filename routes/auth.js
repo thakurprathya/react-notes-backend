@@ -40,7 +40,7 @@ async (req, res)=>{  //for post request send on endpoint /auth/createuser
         const data={
             user: {id: user.id}
         };
-        const authtoken= jwt.sign(data, "$$Secret$$");  //second parameter is a secret string it could be anything, sign is a synchronous funct so no need of async await
+        const authtoken= jwt.sign(data, process.env.SECRET.toString());  //second parameter is a secret string it could be anything, sign is a synchronous funct so no need of async await
         success=true;
         res.json({success, authtoken}); //returning a token, we can also return direct user to it but for authentication we require token
     }catch(error){  //if some error occur in try block catch block will execute
