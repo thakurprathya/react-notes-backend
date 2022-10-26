@@ -12,9 +12,9 @@ app.use(cors()); //using cors for preventing cors errors
 app.use(express.json())  //middle name added for using request.body (used in ./routes/author), now we can send data in json
 
 //sample response for / page
-app.get("/",(req, res)=>{
-    res.json("Connection successful, Server started!!");
-})
+// app.get("/",(req, res)=>{
+//     res.json("Connection successful, Server started!!");
+// })
 
 //Available routes
 app.use("/auth", require("./routes/auth"));  //setting route with endpoint /auth visible at http://localhost:${port}/auth
